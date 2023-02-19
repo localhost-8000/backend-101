@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+</head>
+<body>
+    <h1>College:- <%= collegeName %></h1>
+    <h2>Event:- <%= eventName %></h2>
+    <p>We have <%= remainingSeats %> seats remaining out of total <%= totalSeats %>.</p>
+
+    <form action="/create" method="post">
+        <label for="username">User Name</label>
+        <input type="text" name="username" id="username">
+
+        <br />
+        <br />
+
+        <label for="seats">Seats you wanna book</label>
+        <input type="number" name="seats" id="seats" min="1" max="<%= remainingSeats %>">
+
+        <button type="submit">Book ticket</button>
+
+
+    </form>
+</body>
+</html>
